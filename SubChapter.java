@@ -3,40 +3,28 @@ import java.util.List;
 
 public class SubChapter {
     String name;
-    List<Paragraph> paragraphs;
-    List<Image> images;
-    List<Table> tables;
+    List<Element> elements;
 
     public SubChapter(String name) {
         this.name = name;
-        this.paragraphs = new ArrayList<>();
-        this.images = new ArrayList<>();
-        this.tables = new ArrayList<>();
+        this.elements = new ArrayList<>();
     }
 
     public void createNewParagraph(String Paragraph){
-        paragraphs.add(new Paragraph(Paragraph));
+        elements.add(new Paragraph(Paragraph));
     }
 
     public void createNewImage(String imageName){
-        images.add(new Image(imageName));
+        elements.add(new Image(imageName));
     }
 
     public void createNewTable(String tableTitle){
-        tables.add(new Table(tableTitle));
+        elements.add(new Table(tableTitle));
     }
 
     public void print(){
         System.out.println(name);
-        for (var i: paragraphs) {
-            i.print();
-        }
-        System.out.println();
-        for (var i: images) {
-            i.print();
-        }
-        System.out.println();
-        for (var i: tables) {
+        for (var i: elements) {
             i.print();
         }
         System.out.println();
