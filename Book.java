@@ -2,73 +2,61 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Book {
-    String Title;
-    List<String> Paragraphs;
-    List<String> Images;
-    List<String> Tables;
+    String title;
+    List<String> paragraphs;
+    List<String>images;
+    List<String> tables;
+    Author authorOfBook;
+    List<Chapter> chapters;
 
     public Book(String Title){
-        this.Title = Title;
-        this.Paragraphs = new ArrayList<>();
-        this.Images = new ArrayList<>();
-        this.Tables = new ArrayList<>();
+        this.title = Title;
+        this.paragraphs = new ArrayList<>();
+        this.images = new ArrayList<>();
+        this.tables = new ArrayList<>();
+        this.chapters = new ArrayList<>();
     }
 
-    public String getTitle() {
-        return Title;
-    }
-
-    public void setTitle(String title) {
-        Title = title;
-    }
-
-    public List<String> getTables() {
-        return Tables;
-    }
-
-    public void setTables(List<String> tables) {
-        Tables = tables;
-    }
-
-    public List<String> getParagraphs() {
-        return Paragraphs;
-    }
-
-    public void setParagraphs(List<String> paragraphs) {
-        Paragraphs = paragraphs;
-    }
-
-    public List<String> getImages() {
-        return Images;
-    }
-
-    public void setImages(List<String> images) {
-        Images = images;
+    public Book(String Title, Author Author){
+        this.title = Title;
+        this.paragraphs = new ArrayList<>();
+        this.images = new ArrayList<>();
+        this.tables = new ArrayList<>();
+        this.authorOfBook = Author;
     }
 
     public void createNewParagraph(String newParagraph){
-        Paragraphs.add(newParagraph);
+        paragraphs.add(newParagraph);
     }
 
     public void createNewImage(String newImageSrc){
-        Images.add(newImageSrc);
+        images.add(newImageSrc);
     }
 
     public void createNewTable(String newTable){
-        Tables.add(newTable);
-    }
-
-    @Override
-    public String toString() {
-        return "Book{" +
-                "Title='" + Title + '\'' +
-                ", Paragraphs=" + Paragraphs +
-                ", Images=" + Images +
-                ", Tables=" + Tables +
-                '}';
+        tables.add(newTable);
     }
 
     public void print(){
-        System.out.print(this.toString());
+
+        System.out.println(title + " by ");
+        authorOfBook.print();
+        for (var i: chapters) {
+            i.print();
+        }
+        System.out.println();
+    }
+
+    public void addAuthor(Author newAuthor){
+        authorOfBook = newAuthor;
+    }
+
+    public int createChapter(String newChapter){
+        chapters.add(new Chapter(newChapter));
+        return chapters.size() - 1;
+    }
+
+    public Chapter getChapter(int indexOfChapter){
+        return chapters.get(indexOfChapter);
     }
 }
