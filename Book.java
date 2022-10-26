@@ -1,28 +1,28 @@
 import java.util.ArrayList;
 import java.util.List;
 
-public class Book {
-    String title;
+public class Book extends Section{
     List<String> paragraphs;
     List<String>images;
     List<String> tables;
-    Author authorOfBook;
+    List<Author> authors;
     List<Chapter> chapters;
 
     public Book(String Title){
-        this.title = Title;
+        super(Title);
         this.paragraphs = new ArrayList<>();
         this.images = new ArrayList<>();
         this.tables = new ArrayList<>();
         this.chapters = new ArrayList<>();
+        this.authors = new ArrayList<>();
     }
 
     public Book(String Title, Author Author){
-        this.title = Title;
+        super(Title);
         this.paragraphs = new ArrayList<>();
         this.images = new ArrayList<>();
         this.tables = new ArrayList<>();
-        this.authorOfBook = Author;
+        this.authors.add(Author);
     }
 
     public void createNewParagraph(String newParagraph){
@@ -38,17 +38,18 @@ public class Book {
     }
 
     public void print(){
-
-        System.out.println(title + " by ");
-        authorOfBook.print();
-        for (var i: chapters) {
+        System.out.println("Book: " + title);
+        System.out.println();
+        System.out.println("Authors: ");
+        for(Author i : authors){
             i.print();
         }
         System.out.println();
+        super.print();
     }
 
     public void addAuthor(Author newAuthor){
-        authorOfBook = newAuthor;
+        authors.add(newAuthor);
     }
 
     public int createChapter(String newChapter){
@@ -58,5 +59,9 @@ public class Book {
 
     public Chapter getChapter(int indexOfChapter){
         return chapters.get(indexOfChapter);
+    }
+
+    public void addContent(Element element){
+        elements.add(element);
     }
 }
