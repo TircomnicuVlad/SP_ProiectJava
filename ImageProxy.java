@@ -1,21 +1,19 @@
 import java.awt.*;
-import java.util.concurrent.TimeUnit;
+import java.util.List;
 
-public class Image implements Element, Picture{
+public class ImageProxy implements Element, Picture{
     String url;
-    String ImageContent;
+    Dimension dim;
+    Image realImage;
 
-    public Image(String title) {
-        url = title;
-        try{
-            TimeUnit.SECONDS.sleep(5);
-        } catch (InterruptedException e) {
-            e.printStackTrace();
-        }
+    public ImageProxy(String Url){
+        url = Url;
     }
 
-    public void print(){
-        System.out.println("Image with name: " + url + " ");
+    @Override
+    public void print() {
+        loadImage();
+        realImage.print();
     }
 
     @Override
@@ -45,6 +43,14 @@ public class Image implements Element, Picture{
 
     @Override
     public String content() {
-        return  ImageContent;
+        return null;
+    }
+
+    public Image loadImage(){
+        if(realImage == null){
+            realImage = new Image(url);
+        }
+
+        return realImage;
     }
 }
