@@ -1,7 +1,7 @@
 public class AlignLeft implements AlignStrategy{
 
     @Override
-    public void render(Paragraph paragraph) {
-        System.out.println("Paragraph: " + paragraph.getText() + " ");
+    public void render(String paragraph) {
+        System.out.println("Paragraph: " + paragraph + " ");
     }
 }

@@ -9,7 +9,7 @@ public class Paragraph implements Element{
 
     public void print(){
         if(textAlignment != null) {
-            textAlignment.render(this);
+            textAlignment.render(text);
         }
         else {
             System.out.println("Paragraph: " + text + " ");
