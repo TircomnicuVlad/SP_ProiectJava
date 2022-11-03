@@ -4,6 +4,7 @@ import java.util.concurrent.TimeUnit;
 public class Image implements Element, Picture{
     private String url;
     private String ImageContent;
+    private ImageLoaderFactory uses;
 
     public Image(String title) {
         url = title;
