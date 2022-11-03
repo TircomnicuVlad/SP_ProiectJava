@@ -1,5 +1,5 @@
 public class TableOfContents implements Element{
-    String something;
+    private String something;
 
     public TableOfContents(String Something){
         this.something = Something;

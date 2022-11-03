@@ -2,8 +2,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Section implements Element{
-    String title;
-    List<Element> elements = new ArrayList<>();
+    private String title;
+    private List<Element> elements = new ArrayList<>();
 
     public Section(String title){
         this.title = title;

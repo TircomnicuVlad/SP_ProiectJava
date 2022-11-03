@@ -2,7 +2,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Book extends Section{
-    List<Author> authors;
+    private List<Author> authors;
 
     public Book(String Title){
         super(Title);

@@ -2,9 +2,9 @@ import java.awt.*;
 import java.util.List;
 
 public class ImageProxy implements Element, Picture{
-    String url;
-    Dimension dim;
-    Image realImage;
+    private String url;
+    private Dimension dim;
+    private Image realImage;
 
     public ImageProxy(String Url){
         url = Url;

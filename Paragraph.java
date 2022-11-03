@@ -1,5 +1,6 @@
 public class Paragraph implements Element{
-    String text;
+    private String text;
+    private AlignStrategy textAlignment;
 
     public Paragraph(String text) {
 
@@ -7,7 +8,12 @@ public class Paragraph implements Element{
     }
 
     public void print(){
-        System.out.println("Paragraph: " + text + " ");
+        if(textAlignment != null) {
+            textAlignment.render(this);
+        }
+        else {
+            System.out.println("Paragraph: " + text + " ");
+        }
     }
 
     @Override
@@ -23,5 +29,13 @@ public class Paragraph implements Element{
     @Override
     public Element get(int index) {
         return null;
+    }
+
+    public void setAlignStrategy(AlignStrategy strategy){
+        textAlignment = strategy;
+    }
+
+    public String getText() {
+        return text;
     }
 }

@@ -1,5 +1,5 @@
 public class Table implements Element{
-    String title;
+    private String title;
 
     public Table(String title) {
         this.title = title;

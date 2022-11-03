@@ -2,8 +2,8 @@ import java.awt.*;
 import java.util.concurrent.TimeUnit;
 
 public class Image implements Element, Picture{
-    String url;
-    String ImageContent;
+    private String url;
+    private String ImageContent;
 
     public Image(String title) {
         url = title;
