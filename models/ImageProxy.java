@@ -1,10 +1,16 @@
-import java.awt.*;
-import java.util.List;
+package models;
 
-public class ImageProxy implements Element, Picture{
+import models.Element;
+import models.Image;
+import models.Picture;
+import models.Visitor;
+
+import java.awt.*;
+
+public class ImageProxy implements Element, Picture {
     private String url;
     private Dimension dim;
-    private Image realImage;
+    private models.Image realImage;
 
     public ImageProxy(String Url){
         url = Url;
@@ -32,6 +38,11 @@ public class ImageProxy implements Element, Picture{
     }
 
     @Override
+    public void accept(Visitor visitor) {
+        visitor.visitImageProxy(this);
+    }
+
+    @Override
     public String url() {
         return null;
     }
@@ -46,7 +57,7 @@ public class ImageProxy implements Element, Picture{
         return null;
     }
 
-    public Image loadImage(){
+    public models.Image loadImage(){
         if(realImage == null){
             realImage = new Image(url);
         }

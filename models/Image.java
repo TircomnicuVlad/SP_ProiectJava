@@ -1,3 +1,7 @@
+package models;
+
+import services.ImageLoaderFactory;
+
 import java.awt.*;
 import java.util.concurrent.TimeUnit;
 
@@ -16,7 +20,7 @@ public class Image implements Element, Picture{
     }
 
     public void print(){
-        System.out.println("Image with name: " + url + " ");
+        System.out.println("models.Image with name: " + url + " ");
     }
 
     @Override
@@ -32,6 +36,11 @@ public class Image implements Element, Picture{
     @Override
     public Element get(int index) {
         return null;
+    }
+
+    @Override
+    public void accept(Visitor visitor) {
+        visitor.visitImage(this);
     }
 
     @Override
