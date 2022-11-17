@@ -8,7 +8,11 @@ public class Table implements Element{
     }
 
     public void print(){
-        System.out.print(title + " ");
+        System.out.println(title + " ");
+    }
+
+    public String getTitle() {
+        return title;
     }
 
     @Override

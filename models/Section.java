@@ -5,6 +5,11 @@ import java.util.List;
 
 public class Section implements Element{
     private String title;
+
+    public String getTitle() {
+        return title;
+    }
+
     private List<Element> elements = new ArrayList<>();
 
     public Section(String title){

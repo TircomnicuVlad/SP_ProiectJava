@@ -52,6 +52,10 @@ public class ImageProxy implements Element, Picture {
         return null;
     }
 
+    public String getUrl() {
+        return url;
+    }
+
     @Override
     public String content() {
         return null;

@@ -1,20 +1,27 @@
 package models;
 
-public class TableOfContents implements Element{
-    private String something;
+import java.util.ArrayList;
+import java.util.List;
 
-    public TableOfContents(String Something){
-        this.something = Something;
-    }
+public class TableOfContents implements Element{
+    private List<String> something = new ArrayList<String>();
+
+    public TableOfContents(){}
 
     @Override
     public void print() {
-        System.out.println(something);
+        for (String i : something) {
+            System.out.println(i);
+        }
     }
 
     @Override
     public void add(Element element) {
 
+    }
+
+    public void add(String element, int page) {
+        something.add(element + " pag." + Integer.toString(page));
     }
 
     @Override

@@ -8,6 +8,11 @@ import java.util.concurrent.TimeUnit;
 public class Image implements Element, Picture{
     private String url;
     private String ImageContent;
+
+    public String getUrl() {
+        return url;
+    }
+
     private ImageLoaderFactory uses;
 
     public Image(String title) {
