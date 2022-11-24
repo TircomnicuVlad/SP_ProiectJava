@@ -21,4 +21,11 @@ public class Firma {
             departament.accept(visitor);
         }
     }
+
+    public void print(){
+        System.out.println("Firma: " + nume);
+        for(Departament departament : departamente){
+            departament.print();
+        }
+    }
 }

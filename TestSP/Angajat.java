@@ -16,4 +16,8 @@ public abstract class Angajat {
     public int getSalariu() {
         return salariu;
     }
+
+    public void print(){
+        System.out.println("        Angajat:" + nume + " cu salariul: " + salariu);
+    }
 }

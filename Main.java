@@ -15,5 +15,6 @@ public class Main {
         Visitor calculSalariu = new VisitorSalariu();
         a.accept(calculSalariu);
         calculSalariu.print();
+        a.print();
     }
 }

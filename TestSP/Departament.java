@@ -30,4 +30,15 @@ public class Departament {
             angajat.accept(visitor);
         }
     }
+
+    public void print(){
+        System.out.println("    Departament:" + nume);
+        for (Angajat angajat : angajati){
+            angajat.print();
+        }
+        for (Departament departament : subDepartamente){
+            System.out.print("  ");
+            departament.print();
+        }
+    }
 }

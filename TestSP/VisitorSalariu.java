@@ -30,5 +30,6 @@ public class VisitorSalariu implements Visitor{
         System.out.println("Salariu total Manageri: " + managerTotal);
         System.out.println("Salariu total Programatori: " + programatorTotal);
         System.out.println("Salariu total Testeri: " + testerTotal);
+        System.out.println();
     }
 }
